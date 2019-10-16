@@ -1,0 +1,24 @@
+{
+  "name": "navigationspattern",
+  "version": "1.0.0",
+  "description": "Bachelorarbeit - Katharina Hofmann",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khofman1/navigationpattern.git"
+  },
+  "author": "Katharina Hofmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khofman1/navigationpattern/issues"
+  },
+  "homepage": "https://github.com/khofman1/navigationpattern#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
