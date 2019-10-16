@@ -1,29 +1,42 @@
-$myfont: Georgia 1.2em;
-$table_head_col: #ccc;
-$table_row_col: #eee;
-$table_bor_col: #eee;
-$container_width: 700px;
-$first_col_width: 150px;
+$grid-columns: 9;
+$gray: #585353;
 
-div.container {
-
-    margin: auto;
-    font: $myfont;
-    width: $container_width;
-}
-
-table {
-
-    tr:nth-child(odd) {background: $table_row_col}
-
-    td:first-child {width: $first_col_width}
-
-    th {
-        background-color: $table_head_col;
+@for $i from 1 through $grid-columns {
+    #springboard-#{$i} {
+        grid-area: springboard-#{$i};
+        padding: 10px;
+        box-sizing: border-box;
     }
+}
+.container {
+    margin: 40px;
+}
+.springboard {
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-areas:
+        "springboard-1 springboard-1 springboard-1"
+        "springboard-1 springboard-1 springboard-1"
+        "springboard-4 springboard-5 springboard-6"
+        "springboard-3 springboard-2  springboard-8"
+        "springboard-7 springboard-7 springboard-9"
+        "springboard-7 springboard-7 .";
+    background-color: aliceblue;
+    grid-gap: 15px;
 
-    border: 1px solid $table_bor_col;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: fit-content;
+        background-color: $gray;
+        color: white;
+
+    }
 }
 
-.test {display: none;
-}
+// Media Queries
+
