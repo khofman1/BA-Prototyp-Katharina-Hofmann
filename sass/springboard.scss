@@ -1,7 +1,6 @@
+@import 'variables';
+
 $grid-columns: 9;
-$gray: #585353;
-$spacing-50: 50px;
-$spacing-1000: 1000px;
 
 @for $i from 1 through $grid-columns {
     #springboard-#{$i} {
@@ -9,34 +8,69 @@ $spacing-1000: 1000px;
     }
 }
 .container {
-    width: 800px;
-    height: auto;
     padding-left: $spacing-50;
     padding-right: $spacing-50;
+    margin: 0;
+    justify-content: center;
+    max-width: 1280px;
+
+    @media screen and (min-width: 481px) and (max-width: 780px) {
+        padding-left: $spacing-10;
+        padding-right: $spacing-10;
+    }
 }
 .springboard {
+    margin-top: $spacing-20;
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(5,1fr);
     grid-auto-rows: 1fr;
     grid-template-areas:
-        "springboard-1 springboard-1 springboard-1"
-        "springboard-1 springboard-1 springboard-1"
-        "springboard-4 springboard-5 springboard-6"
-        "springboard-3 springboard-2  springboard-8"
-        "springboard-7 springboard-7 springboard-9"
-        "springboard-7 springboard-7 .";
+        "springboard-1 springboard-1 springboard-2"
+        "springboard-1 springboard-1 springboard-2"
+        "springboard-3 springboard-4 springboard-5"
+        "springboard-8 springboard-6  springboard-6"
+        "springboard-8 springboard-7 springboard-9";
     background-color: aliceblue;
     grid-gap: 15px;
+
+    @media screen and (min-width: 481px) and (max-width: 1023px) {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(7,1fr);
+        grid-gap: $spacing-20;
+        grid-template-areas:
+            "springboard-1 springboard-1"
+            "springboard-2 springboard-3"
+            "springboard-4 springboard-5"
+            "springboard-8 springboard-6"
+            "springboard-8 springboard-7"
+            "springboard-9 springboard-9";
+    }
+
+    @media screen and (max-width: 480px) {
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(10,1fr);
+        grid-gap: $spacing-20;
+        grid-template-areas:
+                "springboard-1"
+                "springboard-1"
+                "springboard-2"
+                "springboard-3"
+                "springboard-4"
+                "springboard-5"
+                "springboard-6"
+                "springboard-7"
+                "springboard-8"
+                "springboard-9";
+    }
 
     &:before  {
         content: '';
         width: 0;
-        padding-bottom: 100%;
+        padding-bottom:100%;
         grid-row: 1 / 1;
         grid-column: 1 / 1;
     }
-
 
     &__item {
         display: flex;
@@ -44,8 +78,9 @@ $spacing-1000: 1000px;
         align-items: center;
         border: 1px solid black;
         background-color: $gray;
-        color: white;
+        color: $black;
         width: 100%;
+        font-size: $spacing-30;
     }
 }
 

@@ -1,0 +1,45 @@
+$lightgray: #F1F1F1;
+$gray: #d3d3d3;
+$darkgray: #a9a9a9;
+$darkergray: #7f7f7f;
+$darkestgray: #1F1F1F;
+$petrol: #005F6A;
+
+$black: #000000;
+$white: #ffff;
+$spacing-10: 10px;
+$spacing-20: 2*$spacing-10;
+$spacing-30: 3*$spacing-10;
+$spacing-40: 4*$spacing-10;
+$spacing-50: 5*$spacing-10;
+$spacing-60: 6*$spacing-10;
+$spacing-100: 10*$spacing-10;
+$spacing-200: 20*$spacing-10;
+
+
+.button {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: $spacing-10;
+  text-decoration: none;
+  background-color: $white;
+  color: $black;
+  width: $spacing-200;
+  margin: $spacing-10;
+
+  &:hover {
+    background-color: $petrol;
+    color: $white;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+h1 {
+  margin-top: $spacing-20;
+  margin-bottom: $spacing-40;
+}

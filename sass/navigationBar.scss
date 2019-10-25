@@ -1,0 +1,234 @@
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation {
+  display: block;
+  border-box: 2px;
+
+
+  &__menu {
+    display: block;
+    background-color: $white;
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__list {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__transient {
+    text-decoration: none;
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    background-color: $white;
+    color: $black;
+    border: 1px solid black;
+  }
+
+  &__listItem,
+  &__subListElement,
+  &__subsubListElement {
+    color: $black;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 20px 15px;
+    display: block;
+
+    &:hover {
+      color: $white;
+      background: $petrol;
+    }
+  }
+
+  &__subListElement {
+    background-color: $gray;
+
+  }
+
+  &__subsubListElement {
+    background-color: $darkgray;
+  }
+
+  &__subMenu,
+  &__subsubMenu {
+    display: none;
+    opacity: 0;
+    padding: 0;
+    width: 170px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transform: translate(0, 0);
+
+    // arrow up
+    &:after {
+      bottom: 100%;
+      left: 10%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: $black;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+
+    &:hover {
+      background: #9ca3da;
+    }
+  }
+
+  &__subsubMenu {
+    left: 169px;
+    top: 0;
+    display: none;
+    transform: translate($spacing-20, $spacing-20);
+
+    &:after {
+      left: -6px;
+      top: 19%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-right-color: $black;
+      border-width: 6px;
+      margin-top: -6px;
+    }
+  }
+
+  &__subList,
+  &__subsubList {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $black;
+  }
+
+  li:hover > ul,
+  li > ul ul:hover {
+    display: block;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+
+@media screen and (max-width: 1023px) {
+
+  .navigation {
+    margin: 0;
+    background: none;
+
+    &__transient {
+      display: block;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__listItem {
+      background-color: $gray !important;
+    }
+
+    &__list,
+    &__subList,
+    &__subsubList {
+      display: block;
+      margin: 0;
+
+      &:hover > a {
+        background: $petrol !important;
+        color: $white;
+      }
+
+      &:hover > ul {
+        background: $petrol;
+        color: $black;
+        display: block;
+        opacity: 1;
+        position: relative;
+        transform: initial;
+      }
+    }
+
+    &__subList,
+    &__subsubList {
+      border-left: 10px solid $white;
+      border-right: 10px solid $white;
+    }
+
+    &__listItem,
+    &__subListeItem {
+      background: $darkergray;
+
+      &:hover {
+        background: $petrol;
+        color: $black;
+      }
+    }
+
+    &__subMenu,
+    &__subsubMenu {
+      display: none;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: initial;
+    }
+
+    &__subsubMenu {
+
+      &:after {
+        top: 5px;
+        left: 10%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #fff;
+        border-width: 6px;
+        margin-left: -6px;
+      }
+    }
+
+    &__subListElement {
+      padding-left: $spacing-20 !important;
+      border: 1px solid $black;
+    }
+
+    &__subListElement {
+      padding-left: $spacing-60 !important;
+    }
+
+    &__subsubListElement {
+      padding-left: $spacing-100 !important;
+    }
+
+      ul ul {
+      left: 0;
+      transform: initial;
+    }
+  }
+}
