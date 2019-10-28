@@ -1,0 +1,174 @@
+.button {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 10px;
+  text-decoration: none;
+  background-color: #ffff;
+  color: #000000;
+  width: 200px;
+  margin: 10px; }
+  .button:hover {
+    background-color: #005F6A;
+    color: #ffff; }
+  .button__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 40px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.navigation {
+  display: block;
+  border-box: 2px; }
+  .navigation__menu {
+    display: block;
+    background-color: #ffff;
+    border: 1px solid black;
+    display: flex;
+    width: 100%;
+    justify-content: center; }
+  .navigation__list {
+    display: inline-block;
+    position: relative;
+    z-index: 2; }
+  .navigation__transient {
+    text-decoration: none;
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    background-color: #ffff;
+    color: #000000;
+    border: 1px solid black; }
+  .navigation__listItem, .navigation__subListElement, .navigation__subsubListElement {
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 20px 15px;
+    display: block; }
+    .navigation__listItem:hover, .navigation__subListElement:hover, .navigation__subsubListElement:hover {
+      color: #ffff;
+      background: #005F6A; }
+  .navigation__subListElement {
+    background-color: #d3d3d3; }
+  .navigation__subsubListElement {
+    background-color: #a9a9a9; }
+  .navigation__subMenu, .navigation__subsubMenu {
+    display: none;
+    opacity: 0;
+    padding: 0;
+    width: 170px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transform: translate(0, 0); }
+    .navigation__subMenu:after, .navigation__subsubMenu:after {
+      bottom: 100%;
+      left: 10%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #000000;
+      border-width: 6px;
+      margin-left: -6px; }
+    .navigation__subMenu:hover, .navigation__subsubMenu:hover {
+      background: #9ca3da; }
+  .navigation__subsubMenu {
+    left: 169px;
+    top: 0;
+    display: none;
+    transform: translate(20px, 20px); }
+    .navigation__subsubMenu:after {
+      left: -6px;
+      top: 19%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-right-color: #000000;
+      border-width: 6px;
+      margin-top: -6px; }
+  .navigation__subList, .navigation__subsubList {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #000000; }
+  .navigation li:hover > ul,
+  .navigation li > ul ul:hover {
+    display: block;
+    opacity: 1;
+    transform: translate(0, 0); }
+
+@media screen and (max-width: 1023px) {
+  .navigation {
+    margin: 0;
+    background: none; }
+    .navigation__transient {
+      display: block; }
+    .navigation__menu {
+      display: none; }
+    .navigation__listItem {
+      background-color: #d3d3d3 !important; }
+    .navigation__list, .navigation__subList, .navigation__subsubList {
+      display: block;
+      margin: 0; }
+      .navigation__list:hover > a, .navigation__subList:hover > a, .navigation__subsubList:hover > a {
+        background: #005F6A !important;
+        color: #ffff; }
+      .navigation__list:hover > ul, .navigation__subList:hover > ul, .navigation__subsubList:hover > ul {
+        background: #005F6A;
+        color: #000000;
+        display: block;
+        opacity: 1;
+        position: relative;
+        transform: initial; }
+    .navigation__subList, .navigation__subsubList {
+      border-left: 10px solid #ffff;
+      border-right: 10px solid #ffff; }
+    .navigation__listItem, .navigation__subListeItem {
+      background: #7f7f7f; }
+      .navigation__listItem:hover, .navigation__subListeItem:hover {
+        background: #005F6A;
+        color: #000000; }
+    .navigation__subMenu, .navigation__subsubMenu {
+      display: none;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: initial; }
+    .navigation__subsubMenu:after {
+      top: 5px;
+      left: 10%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #fff;
+      border-width: 6px;
+      margin-left: -6px; }
+    .navigation__subListElement {
+      padding-left: 20px !important;
+      border: 1px solid #000000; }
+    .navigation__subListElement {
+      padding-left: 60px !important; }
+    .navigation__subsubListElement {
+      padding-left: 100px !important; }
+    .navigation ul ul {
+      left: 0;
+      transform: initial; } }
